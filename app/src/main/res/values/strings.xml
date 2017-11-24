@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">BaseDatos</string>
+    <string name="texto_busqueda">Ingresar busqueda</string>
+    <string name="texto_boton_buscar">Buscar</string>
+    <string name="texto_boton_registrar">Crear persona</string>
+    <string name="texto_nombres">Nombres</string>
+    <string name="texto_apellidos">Apellidos</string>
+    <string name="texto_edad">Edad</string>
+    <string name="texto_telefono">Telefono</string>
+    <string name="texto_boton_crear">Crear persona</string>
+    <string name="textoNombres">Nombres</string>
+    <string name="textoApellidos">Apellidos</string>
+    <string name="textoEdad">Edad</string>
+    <string name="textoTelefono">Telefono</string>
+    <string name="texto_mg">Me gusta</string>
+</resources>
