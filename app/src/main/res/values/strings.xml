@@ -13,4 +13,5 @@
     <string name="textoEdad">Edad</string>
     <string name="textoTelefono">Telefono</string>
     <string name="texto_mg">Me gusta</string>
+    <string name="texto_boton_eliminar">Eliminar registro</string>
 </resources>
