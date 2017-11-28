@@ -13,5 +13,7 @@
     <string name="textoEdad">Edad</string>
     <string name="textoTelefono">Telefono</string>
     <string name="texto_mg">Me gusta</string>
-    <string name="texto_boton_eliminar">Eliminar registro</string>
+    <string name="texto_boton_eliminar">Eliminar</string>
+    <string name="texto_boton_editar">Editar</string>
+    <string name="texto_boton_cancelar">Cancelar</string>
 </resources>

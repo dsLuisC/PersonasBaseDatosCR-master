@@ -11,12 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.luis.basedatos.R;
 import com.example.luis.basedatos.models.Persona;
 import com.example.luis.basedatos.utility.DeletePerson;
-import com.example.luis.basedatos.views.MainActivity;
+import com.example.luis.basedatos.views.RegisterActivity;
 
 import java.util.List;
 
@@ -46,17 +45,21 @@ public class PersonasAdapter extends RecyclerView.Adapter<PersonasAdapter.Person
         holder.apellidos.setText(listaPersonas.get(position).getLastname());
         holder.edad.setText(String.valueOf(listaPersonas.get(position).getAge()));
         holder.telefono.setText(listaPersonas.get(position).getPhone());
-        holder.btnDelete.setOnClickListener(new View.OnClickListener() {
+        holder.btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
-                /*Intent i = new Intent(context, DeleteActivity.class);
+                Intent i = new Intent(context, RegisterActivity.class);
                 i.putExtra("id", listaPersonas.get(position).getId());
                 i.putExtra("name", listaPersonas.get(position).getName());
                 i.putExtra("lastname", listaPersonas.get(position).getLastname());
                 i.putExtra("age", listaPersonas.get(position).getAge());
-                i.putExtra("phone", listaPersonas.get(position).getPhone());*/
-                //view.getContext().startActivity(i);
-
+                i.putExtra("phone", listaPersonas.get(position).getPhone());
+                view.getContext().startActivity(i);
+            }
+        });
+        holder.btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
                 DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -65,19 +68,17 @@ public class PersonasAdapter extends RecyclerView.Adapter<PersonasAdapter.Person
                                 //Yes button clicked
                                 DeletePerson aux = new DeletePerson();
                                 aux.delete(listaPersonas.get(position).getId(), view);
-                                //Toast.makeText(MainActivity.this, "YES", Toast.LENGTH_SHORT).show();
                                 break;
 
                             case DialogInterface.BUTTON_NEGATIVE:
                                 //No button clicked
-                                //Toast.makeText(MainActivity.this, "NO", Toast.LENGTH_SHORT).show();
                                 break;
                         }
                     }
                 };
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-                builder.setMessage("Esta seguro de eliminar?").setPositiveButton("Yes", dialogClickListener).setNegativeButton("No", dialogClickListener).show();
+                builder.setMessage("Esta seguro de eliminar?").setPositiveButton("Si", dialogClickListener).setNegativeButton("No", dialogClickListener).show();
             }
         });
     }
@@ -93,6 +94,7 @@ public class PersonasAdapter extends RecyclerView.Adapter<PersonasAdapter.Person
         TextView edad;
         TextView telefono;
         CardView personasCard;
+        Button btnEdit;
         Button btnDelete;
 
         public PersonasViewHolder(View itemView) {
@@ -102,6 +104,7 @@ public class PersonasAdapter extends RecyclerView.Adapter<PersonasAdapter.Person
             edad = itemView.findViewById(R.id.cvEdad);
             telefono = itemView.findViewById(R.id.cvTelefono);
             personasCard = itemView.findViewById(R.id.personasCard);
+            btnEdit = itemView.findViewById(R.id.btnEdit);
             btnDelete = itemView.findViewById(R.id.btnDelete);
         }
     }

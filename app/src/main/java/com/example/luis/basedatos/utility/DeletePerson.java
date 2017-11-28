@@ -24,9 +24,9 @@ public class DeletePerson {
         db.execSQL("delete from persons where id = " + id);
 
         Toast.makeText(view.getContext(), "Contacto fue eliminado correctamente", Toast.LENGTH_SHORT).show();
-        
-        Context context = null;
-        
-        ((MainActivity) context).processData();
+
+        Intent i = new Intent(view.getContext(), MainActivity.class);
+
+        view.getContext().startActivity(i);
     }
 }

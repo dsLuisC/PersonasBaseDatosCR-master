@@ -4,6 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <EditText
+        android:id="@+id/txtId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+    <EditText
         android:id="@+id/txtNombres"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,9 +28,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/texto_telefono"/>
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/texto_boton_crear"
-        android:onClick="validateCreatePerson"/>
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnCreate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/texto_boton_crear"
+            android:onClick="validateCreatePerson"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/btnCancelCreate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/texto_boton_cancelar"
+            android:onClick="cancelCreatePerson"
+            android:layout_weight="1"/>
+    </LinearLayout>
 </LinearLayout>

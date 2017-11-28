@@ -49,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToRegister(View view) {
         Intent i = new Intent(this, RegisterActivity.class);
+        i.putExtra("id", "");
+        i.putExtra("name", "");
+        i.putExtra("lastname", "");
+        i.putExtra("age", "");
+        i.putExtra("phone", "");
         startActivity(i);
     }
 
