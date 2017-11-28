@@ -72,6 +72,7 @@
                     android:layout_marginLeft="5dp"/>
             </LinearLayout>
             <Button
+                android:id="@+id/btnDelete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/texto_boton_eliminar"/>

@@ -52,6 +52,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void deletePerson(Integer id) {
+        SQLiteDatabase db = sqliteHelper.getReadableDatabase();
+
+        db.execSQL("delete from personas where id = " + id);
+
+        Toast.makeText(this, "Contacto fue eliminado correctamente", Toast.LENGTH_SHORT).show();
+    }
+
     public void listPersons() {
         SQLiteDatabase db = sqliteHelper.getReadableDatabase();
 
